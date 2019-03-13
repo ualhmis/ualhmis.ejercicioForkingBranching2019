@@ -8,3 +8,5 @@ Manel Mena -  Gestor de Proyecto - Prueba Forking and Branching
 Soy un gandul.
 ## Magurean Cosmin
 Persona.java - Alumno.java
+## Sergio Vera Ochoa - Tutor.java - añado clase tutor
+
