@@ -1,9 +1,7 @@
 # ejercicioForkingBranching
-<<<<<<< HEAD
 ##Laura Aguilera Checa
 Equipamiento.java
 Mesa.java
-=======
 ## Antonio Miguel Fernandez
 Profesor.java
 ## Profesor
@@ -16,6 +14,7 @@ tipoTarea.java
 ## Magurean Cosmin
 Persona.java - Alumno.java
 ## Sergio Vera Ochoa - Tutor.java - añado clase tutor
+## Jose Manuel Martinez Salas
+Añado clases Instituto.java y Curso.java
 ##Jose Antonio Parra Sánchez
 Aula.java
->>>>>>> 8d28cc0bac921d70832044b19d7fae6dee215ee1

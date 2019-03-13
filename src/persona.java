@@ -1,13 +1,26 @@
-public class Persona {
-    public String nombre;
-    public String apellidos;
-    public DateTime fechaNacimiento;
+public class Profesor extends Persona {
 
-    public int calcularEdad() {
+    public DateTime fechaDeContratacion;
+    public double dineroMes;
+    public ArrayList<Asignatura> listAsignaturas;
 
+    public Profesor() {}
+    public Profesor(ArrayList<Asignatura> listAsignaturas){
+        this.listAsignaturas = listAsignaturas;
     }
-    
-    public String nombreCompleto() {
-        
+
+    public void setListAsignaturas(ArrayList<Asignatura> listAsignaturas){
+        this.listAsignaturas = listAsignaturas;
     }
+
+    public int antiguedad(){
+    }
+
+    public int dineroTotalGanado(){
+    }
+
+    public double calcularNotaMedia(){
+    }
+
+
 }
