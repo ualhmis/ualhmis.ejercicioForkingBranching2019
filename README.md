@@ -1,4 +1,11 @@
 # ejercicioForkingBranching
+
+## JavaDoc y diagramas de clases
+
+Proyecto mavenizado. Genera diagramas de clases en el JavaDoc, mediante UMLDoclet.
+Ver aquí.
+
+
 ## Adalid Villanueva
 silla.java ordenador.java proyector.java
 ## Laura Aguilera Checa
@@ -22,3 +29,6 @@ Aula.java
 
 ## Profesor
 Manel Mena -  Gestor de Proyecto - Prueba Forking and Branching
+
+
+

@@ -1,0 +1,124 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>Instituto</groupId>
+	<artifactId>Instituto</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<umldoclet.version>2.1.0</umldoclet.version>
+		<!-- Versión: https://mvnrepository.com/artifact/nl.talsmasoftware/umldoclet -->
+	</properties>
+
+	<build>
+		<sourceDirectory>src</sourceDirectory>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.8.1</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>3.4.1</version>
+				<configuration>
+					<source>8</source>
+					<doclint>none</doclint>
+					<sourceFileExcludes>
+						<exclude>**/**JUnit5*.java</exclude>
+					</sourceFileExcludes>
+					<reportOutputDirectory>
+						${project.reporting.outputDirectory}/../../docs
+					</reportOutputDirectory>
+
+					<doclet>nl.talsmasoftware.umldoclet.UMLDoclet</doclet>
+					<docletArtifact>
+						<groupId>nl.talsmasoftware</groupId>
+						<artifactId>umldoclet</artifactId>
+						<version>${umldoclet.version}</version>
+					</docletArtifact>
+					<additionalOptions>
+						<!-- Para generar los .png en un directorio concreto -->
+						<!-- <additionalOption>-umlImageDirectory images</additionalOption> -->
+						<!-- -umlImageFormat (svg | svg_img | png | eps | none) -->
+						<!-- <additionalOption>-umlImageFormat svg_img,png</additionalOption> -->
+						<additionalOption>-umlImageFormat svg_img,png</additionalOption>
+						<additionalOption>-private</additionalOption>
+						<!-- <additionalOption>-createPumlFiles</additionalOption> -->
+						<additionalOption>-umlExcludedTypeReferences</additionalOption> <!-- añade metodos toString() y equals() -->
+						<!-- <additionalOption>-umlJavaBeanPropertiesAsFields</additionalOption> -->
+						<!-- <additionalOption>-umlCustomDirective "skinparam classBackgroundColor 
+							LightYellow"</additionalOption> -->
+						<!-- https://www.javadoc.io/static/nl.talsmasoftware/umldoclet/2.0.20/nl/talsmasoftware/umldoclet/configuration/Configuration.html -->
+						<!-- no funciona, no implementado: <additionalOption>-MethodConfig.ParamNames 
+							"BEFORE_TYPE"</additionalOption> -->
+						<!-- https://github.com/talsma-ict/umldoclet/blob/master/src/main/java/nl/talsmasoftware/umldoclet/javadoc/DocletConfig.java#L304 -->
+
+					</additionalOptions>
+
+					<!-- para añadir PlantUML directamente en comentarios Javadoc -->
+
+					<taglet>org.jdrupes.taglets.plantUml.PlantUml</taglet>
+					<tagletArtifact>
+						<groupId>org.jdrupes.taglets</groupId>
+						<artifactId>plantuml-taglet</artifactId>
+						<version>2.0.1</version>
+					</tagletArtifact>
+
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	<dependencies>
+		<dependency>
+			<groupId>nl.talsmasoftware</groupId>
+			<artifactId>umldoclet</artifactId>
+			<version>${umldoclet.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.jdrupes.taglets/plantuml-taglet -->
+		<!--
+		<dependency>
+			<groupId>org.jdrupes.taglets</groupId>
+			<artifactId>plantuml-taglet</artifactId>
+			<version>2.0.1</version>
+			<scope>provided</scope>
+		</dependency>
+		-->
+
+		<!-- ... -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.13.2</version>
+		</dependency>
+		<!-- ... -->
+		<dependency>
+			<groupId>com.github.stefanbirkner</groupId>
+			<artifactId>system-rules</artifactId>
+			<version>1.19.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>3.11</version>
+		</dependency>
+		<dependency>
+			<groupId>org.bitbucket.cowwoc</groupId>
+			<artifactId>diff-match-patch</artifactId>
+			<version>1.2</version>
+		</dependency>
+		<dependency>
+			<groupId>io.github.java-diff-utils</groupId>
+			<artifactId>java-diff-utils</artifactId>
+			<version>4.9</version>
+		</dependency>
+	</dependencies>
+
+</project>

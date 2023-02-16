@@ -1,3 +1,4 @@
+package org.hmis.instituto;
 public class Mesa extends Equipamiento {
     private int capacidad;
 
